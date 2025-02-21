@@ -1,0 +1,829 @@
+<html lang="en">
+
+<head>
+    <style>
+        .logo {
+            width: auto;
+            height: 40px;
+        }
+
+        .footer {
+            background-color: #1C2B3B;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* Default: Desktop Layout (One Row) */
+        .footerRow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: auto;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Reduce the gap between the two divs in the second row */
+        }
+
+        .footerRow2 {
+            display: flex;
+            align-items: center;
+            width: auto;
+            flex-wrap: nowrap;
+            gap: 20px;
+            text-wrap: nowrap;
+            color: #A2A5A8 !important;
+
+            .footerLinks {
+                display: flex;
+                gap: 10px 20px;
+                flex-wrap: nowrap;
+            }
+
+            .footerLink {
+                color: #82B4FB;
+                font-family: Inter, Arial, Helvetica;
+                font-size: 16px;
+                line-height: 18px;
+                text-decoration: none;
+                text-wrap: nowrap;
+                text-decoration: noee;
+
+            }
+
+            .footerLink:hover {
+                transition: 0;
+                color: white !important;
+                text-decoration: underline !important;
+            }
+
+            .copyright {
+                margin: 0;
+                text-align: right;
+                text-wrap: wrap;
+            }
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Fix: Group Logo & Address Together */
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* Controls spacing between logo & address */
+            flex-shrink: 0;
+            /* Prevents unwanted stretching */
+            width: auto;
+        }
+
+        .left {
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .right {
+            justify-content: flex-end;
+
+        }
+
+        .footerLogo {
+            height: 25px;
+        }
+
+        .footerAddress {
+            font-size: 16px;
+            line-height: 18px;
+            text-align: left;
+            color: #A2A5A8;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: auto;
+            text-wrap: wrap;
+        }
+
+        @media (max-width: 1100px) {
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                /* Stack rows properly */
+                align-items: center;
+                flex-wrap: nowrap;
+                margin: 0 auto;
+            }
+
+            .footer-container {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                gap: 20px;
+            }
+
+            /* First Row: Logo (Left) | Address (Right) */
+            .footerRow {
+                display: flex;
+                justify-content: space-between;
+                flex: 1;
+            }
+
+            .footerRow2 {
+                display: flex;
+                width: 100%;
+                align-items: flex-start;
+
+                .footerLinks {
+                    flex-wrap: wrap;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+
+                .copyright {
+                    text-wrap: wrap;
+                    width: auto;
+                }
+            }
+
+            .left-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            /* Second Row: Copyright (Left) | Links (Right) */
+            .col {
+                width: 50%;
+            }
+
+            .right {
+                align-items: flex-end;
+                text-wrap: wrap;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: flex-end;
+                flex: 2;
+            }
+        }
+
+        /* Tablet (≤ 768px): Two Rows */
+        @media (max-width: 768px) {
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                /* Stack rows properly */
+                align-items: center;
+                flex-wrap: nowrap;
+                margin: 0 auto;
+            }
+
+            .footer-container {
+                display: flex;
+            }
+
+            /* First Row: Logo (Left) | Address (Right) */
+            .footerRow {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .footerRow2 {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                width: 100%;
+                text-wrap: wrap;
+                flex: 2;
+            }
+
+            .left-section {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            /* Second Row: Copyright (Left) | Links (Right) */
+            .col {
+                width: 50%;
+            }
+
+            .right {
+                /*! justify-content: flex-end; */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                width: auto;
+                height: 40px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* Mobile (≤ 480px): Stack Everything Centered */
+        @media (max-width: 480px) {
+            .footer-container {
+                align-items: center;
+            }
+
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                /* Stack rows properly */
+                align-items: center;
+                flex-wrap: nowrap;
+                margin: 0 auto;
+                gap: 20px;
+            }
+
+            .footerAddress {
+                font-size: 16px;
+                line-height: 18px;
+                text-align: center;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .footerRow {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .footerRow2 {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+
+                .footerLinks {
+                    justify-content: center;
+                    gap: 10px 20px;
+                }
+            }
+
+            .col {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .left-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .right {
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+    </style>
+
+
+
+
+    <meta name="ROBOTS" content="INDEX,FOLLOW">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Wheels FAQ Page
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet"
+        type="text/css">
+    <link href="https://cloud.e.wheels.com/index.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker3.min.css"
+        rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Inter" rel="stylesheet" type="text/css">
+    <style>
+        th,
+        td {
+            font-size: small;
+        }
+
+        .container {
+            width: 100vw;
+            flex: 1;
+            max-width: none;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: #F8F8F9;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            color: #1C2B3B;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h2 {
+            color: #1C2B3B;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            /* 34.8px */
+            margin: 0;
+        }
+
+        .header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .mt-5 {
+            margin: 0 !important;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            padding: 20px 20px 20px 0px;
+        }
+
+        form {
+            padding: 0 !important;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-group {
+            padding: 0 !important;
+            width: 100%;
+        }
+
+        .form-select {
+            height: 50px;
+            background-size: 20px;
+            color: #1C2B3B;
+            padding: 10px;
+            width: 100%;
+            border-color: #727578;
+
+            &:hover {
+                border-radius: 5px;
+                border: 1px solid #1D57A6;
+                background-color: #F7FBFF;
+                cursor: pointer;
+                box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+            }
+
+            &:focus {
+                border-radius: 5px;
+                border: 1px solid #193967;
+                background: #E8F0FC;
+
+                /* input-focus */
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
+            }
+        }
+
+        .subhead {
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            color: #001644;
+        }
+
+        .btnPrimary {
+            display: inline-block;
+            border-radius: 25px;
+            background: #1D57A6;
+            color: white;
+            font-family: Inter, Arial, Helvetica;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 28px;
+            margin: 10px 0 0 !important;
+            padding: 10px 40px;
+            text-decoration: none;
+            text-transform: none;
+            height: 50px;
+            border-radius: 30px;
+            border: none;
+
+            &:hover {
+                background: #193967;
+                transition: none;
+
+                /* 3 */
+                box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+            }
+        }
+
+        .btnSecondary {
+            display: inline-block;
+            background: white;
+            color: #1D57A6;
+            font-family: Inter, Arial, Helvetica;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 28px;
+            margin: 10px 0 0 !important;
+
+            text-decoration: none;
+            text-transform: none;
+            padding: 10px 40px;
+            height: 50px;
+
+            border-radius: 30px;
+            border: 1px solid #1D57A6;
+
+            &:hover {
+                border: 1px solid #193967;
+                background: #E8F0FC;
+
+                /* 3 */
+                box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+            }
+        }
+
+        input[type="checkbox"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            appearance: none;
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            /* Reduced space between label and radio button */
+            vertical-align: middle;
+            border: 2px solid #1D57A6;
+            border-radius: 3px;
+            /* This makes the radio button square */
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            margin-right: 5px;
+        }
+
+        input[type="text"] {
+            display: flex;
+            justify-content: center;
+            min-width: 100%;
+            max-width: 100%;
+            height: 30px;
+            border: 2px solid #1D57A6;
+            border-radius: 3px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        textarea {
+            display: flex;
+            border: 2px solid #1D57A6;
+            border-radius: 3px;
+            width: 100%;
+            height: 150px;
+        }
+
+        input[type="date"] {
+            display: flex;
+            justify-content: center;
+            min-width: 15vw;
+            height: 30px;
+            border: 2px solid #1D57A6;
+            border-radius: 3px;
+        }
+
+        input[type="radio"] {
+            accent-color: #1D57A6;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #1D57A6;
+            border-color: #1D57A6;
+            align-items: center;
+            margin-right: 5px;
+        }
+
+        input[type="checkbox"]:checked::before {
+            content: 'X';
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            /* Ensures the checkmark covers the full checkbox */
+            height: 100%;
+            /* Ensures the checkmark covers the full checkbox */
+        }
+
+        /* Disabled state styles */
+        input[type="checkbox"]:disabled {
+            background-color: #1D57A6;
+            border-color: #1D57A6;
+            cursor: not-allowed;
+        }
+
+        input[type="checkbox"]:disabled:checked {
+            background-color: #1D57A6;
+        }
+
+        /* Error state styles */
+        .error input[type="checkbox"] {
+            border-color: #D32F2F;
+        }
+
+        .error input[type="checkbox"]:checked {
+            background-color: #D32F2F;
+            border-color: #D32F2F;
+        }
+
+        .error-text {
+            color: #D32F2F;
+            font-size: 0.875em;
+            margin-top: 2px;
+            margin-left: 27px;
+            /* Adjust if needed to align properly */
+        }
+
+        table tr {
+            margin-bottom: 20px;
+            /* Adjust spacing as needed */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #001644
+        }
+
+        /* accordion styling */
+        .accordion-item {
+            background: none;
+            border: none;
+            border-radius: 0;
+        }
+
+        .accordion-button {
+            background: none;
+            padding: 0 10px;
+            border-top: 1px solid #1D57A6;
+            border-radius: 0 !important;
+            color: #1D57A6;
+            font-size: 20px;
+            font-weight: 600;
+            height: 60px;
+            transition: color .1s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, border-radius .15s ease;
+
+            &::after {
+                width: 30px;
+                height: 30px;
+                background-size: 30px;
+                background-image: none;
+                background-color: #1D57A6;
+                -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+                mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            }
+
+            &:hover {
+                background: #E8F0FC;
+                border-color: #193967;
+                color: #193967;
+
+                &::after {
+                    background-color: #193967;
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+                background: #F7FBFF;
+                border-color: #1D57A6;
+
+                &:hover {
+                    background: #E8F0FC;
+                    border-color: #193967;
+                    color: #193967;
+
+                    &::after {
+                        background-color: #193967;
+                    }
+                }
+            }
+
+            &:not(.collapsed) {
+                color: #1D57A6;
+
+                &::after {
+                    background-image: none;
+                    background-color: #1D57A6;
+                    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+                    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+                }
+            }
+        }
+
+        .accordion-header {
+            color: #1D57A6;
+        }
+
+        .accordion-body {
+            margin: 0 !important;
+            padding: 10px 10px 20px 10px;
+            border-top: 1px solid #E8EBED;
+            background: #F7FBFF;
+            font-size: 16px;
+            max-width: 600px;
+        }
+    </style>
+    <style>
+        :is([id*='google_ads_iframe'], [id*='taboola-'], .taboolaHeight, .taboola-placeholder, #top-ad, #credential_picker_container, #credentials-picker-container, #credential_picker_iframe, [id*='google-one-tap-iframe'], #google-one-tap-popup-container, .google-one-tap__module, .google-one-tap-modal-div, #amp_floatingAdDiv, #ez-content-blocker-container) {
+            display: none !important;
+            min-height: 0 !important;
+            height: 0 !important;
+        }
+    </style>
+    <style>
+        :is([id*='google_ads_iframe'], [id*='taboola-'], .taboolaHeight, .taboola-placeholder, #top-ad, #credential_picker_container, #credentials-picker-container, #credential_picker_iframe, [id*='google-one-tap-iframe'], #google-one-tap-popup-container, .google-one-tap__module, .google-one-tap-modal-div, #amp_floatingAdDiv, #ez-content-blocker-container) {
+            display: none !important;
+            min-height: 0 !important;
+            height: 0 !important;
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.927.0" data-gr-ext-installed="">
+    <div class="container" style="margin-left: 0px; margin-top: 0px; padding: 20px;">
+        <div class="row">
+            <div class="col-lg-12" style="max-width: 800px;">
+                <div>
+                    <img class="logo" alt="Wheels Logo"
+                        src="https://image.e.wheels.com/lib/fe3211737164047b731475/m/1/185ad722-aba5-4b7e-9bd6-2dd2b1e71d47.png">
+                </div>
+                <div class="mt-5" style="max-width: 800px;">
+                    <h2 class="pb-2">FAQs: Vehicle Registration Renewal
+                    </h2>
+                    <div class="accordion" id="accordionExample">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                                    aria-controls="collapse1">What do I need to renew my vehicle registration?</button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">Please complete the following: </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                    aria-controls="collapse2">When do I need to complete it?</button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">Please complete this requirement as soon as possible to
+                                    avoid delays in renewing your vehicle registration.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                    aria-controls="collapse3">Why is a pre-requisite required to renew my vehicle
+                                    registration?</button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">Many states require vehicles to pass inspections every
+                                    one to two years before registration renewal. These inspections may include safety
+                                    checks, smog tests, or VIN verification. This ensures that your car is safe to drive
+                                    and doesn’t harm the environment. Issues like a cracked windshield, worn brakes, or
+                                    a leaky exhaust can make a vehicle unsafe or contribute to air pollution. By
+                                    requiring these checks, states aim to keep hazardous vehicles off the road and
+                                    protect public safety.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
+                                    aria-controls="collapse4">Are inspection rules the same everywhere?</button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">No, requirements vary widely by state, and sometimes
+                                    even by county or city.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading5">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false"
+                                    aria-controls="collapse5">What should I do if my vehicle fails an
+                                    inspection?</button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">If your vehicle fails an annual safety inspection or
+                                    smog check, you may have a set timeframe (i.e. 30 days) to make repairs and retest.
+                                    If it’s a simple fix, such as a headlight bulb that needs replacing, you’ll likely
+                                    pass your retest.</div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading6">
+                                <button class="accordion-button subhead collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false"
+                                    aria-controls="collapse6">Where can I complete the pre-requisite?</button>
+                            </h2>
+                            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
+                                data-bs-parent="#accordionExample" style="">
+                                <div class="accordion-body m-3">Use the following link to find inspection locations near
+                                    you: </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Row 1 (Logo & Address stay together) -->
+            <div class="footerRow">
+                <div class="left-section">
+                    <img alt="Logo" class="footerLogo" width="auto"
+                        src="https://imghost.net/ib/nltZEFch0FOd2uD_1739392787.png">
+                    <p class="footerAddress">
+                        666 Garland Place Des Plaines, IL 60016
+                    </p>
+                </div>
+            </div>
+            <!-- Row 2 (Copyright & Links) -->
+            <div class="footerRow2 right">
+                <p class="copyright">© 2024 Wheels Inc. All Rights Reserved.</p>
+                <div class="footerLinks">
+                    <a href="https://www.wheels.com/public/company/about-us/" class="footerLink">
+                        About Wheels
+                    </a>
+                    <a class="footerLink" href="https://www.wheels.com/public/privacy-policy/">
+                        Privacy &amp; Policies
+                    </a>
+                    <a class="footerLink" href="mailto:support@wheels.com">
+                        support@wheels.com
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
